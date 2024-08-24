@@ -5,9 +5,9 @@ import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 import io
-from paragraph_gen import paragraph_gen
-from prompt_gen import prompt_gen
-from image_gen import img_gen
+from src.paragraph_gen import paragraph_gen
+from src.prompt_gen import prompt_gen
+from src.image_gen import img_gen
 
 
 st.title("👻🔮 DreamMinds.AI")
