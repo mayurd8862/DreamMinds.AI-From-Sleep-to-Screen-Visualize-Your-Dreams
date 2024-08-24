@@ -1,0 +1,11 @@
+streamlit
+langchain_google_genai
+PyPDF2
+langchain-community
+pillow
+docx2txt
+assemblyai
+torch
+diffusers 
+huggingface_hub
+safetensors
