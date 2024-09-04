@@ -45,7 +45,7 @@ dream = st.text_area("Enter your Dream description in short:",
 
 if st.button("🧵 Weave the Dream"):
     json_otpt = paragraph_gen(dream)
-    # st.write(json_otpt)
+    st.write(json_otpt)
     
     title = title_gen(json_otpt)
     st.subheader(title)
@@ -104,6 +104,5 @@ if st.button("🧵 Weave the Dream"):
 # The Mystery of the Vanishing School: One day, our school started disappearing piece by piece. We had to solve the mystery and find the missing parts before everything was gone.
 
 # The Magical Paintings: We found a gallery where the paintings could pull us inside. Each painting was a different adventure, but we had to find the right one to get back to the real world.
-
 
 
