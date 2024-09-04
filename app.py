@@ -57,7 +57,7 @@ if st.button("🧵 Weave the Dream"):
 
         # new_image = image.resize((400, 400))
 # Use Streamlit columns to center the image
-        col1, col2, col3 = st.columns([1, 2, 1])  # Adjust the width ratio as needed
+        col1, col2, col3 = st.columns([0.5, 3.5, 0.5])  # Adjust the width ratio as needed
         with col2:
             if image:
                 st.image(image, use_column_width=True)
