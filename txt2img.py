@@ -4,6 +4,8 @@ import io
 from PIL import Image
 
 API_URL = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev"
+# API_URL = "https://api-inference.huggingface.co/models/ByteDance/Hyper-SD"
+# API_URL = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell"
 headers = {"Authorization": "Bearer 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"}
 
 def query(payload):

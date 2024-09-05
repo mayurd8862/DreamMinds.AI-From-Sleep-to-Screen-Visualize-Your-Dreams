@@ -7,6 +7,7 @@ from src.paragraph_gen import paragraph_gen
 from src.prompt_gen import prompt_gen
 from src.image_gen import img_gen
 from langchain_google_genai import ChatGoogleGenerativeAI
+import time
 
 st.title("👻🔮 DreamMinds.AI")
 st.subheader("", divider='rainbow')
@@ -44,6 +45,7 @@ dream = st.text_area("Enter your Dream description in short:",
                      placeholder="We were at a theme park, enjoying the rides, when suddenly my friends started disappearing one by one. The park became empty and eerie. I had to solve the mystery and bring them back before I was left all alone.")
 
 if st.button("🧵 Weave the Dream"):
+    start_time = time.time()
     json_otpt = paragraph_gen(dream)
     st.write(json_otpt)
     
@@ -64,6 +66,10 @@ if st.button("🧵 Weave the Dream"):
         
         st.write(content)
         st.write("-------------------------")
+
+    end_time = time.time()  # End timing
+    execution_time = end_time - start_time
+    st.write(f"Execution time: {execution_time:.2f} seconds")
 
 
 

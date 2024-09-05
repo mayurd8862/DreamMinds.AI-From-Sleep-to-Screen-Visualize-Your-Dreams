@@ -15,7 +15,7 @@ def prompt_gen(paragraph_content):
     # {paragraph_content}
     # """
 
-    prompt = f"""Generate a straightforward and simple image description based on the content provided below. Use basic words and keep the description clear and easy to understand so it can be effectively used by a text-to-image model.
+    prompt = f"""Generate a straightforward and simple image description based on the content provided below. Use basic words and keep the description clear and easy to understand so it can be effectively used by a text-to-image model. The characters should look lifelike but maintain a cartoon style.
 
     Content:
     {paragraph_content}

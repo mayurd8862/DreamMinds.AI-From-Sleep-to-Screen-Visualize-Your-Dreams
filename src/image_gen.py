@@ -5,7 +5,8 @@ from PIL import Image
 
 api_key=st.secrets.HUGGINGFACEHUB_API_TOKEN
 
-API_URL = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev"
+# API_URL = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev"
+API_URL = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell"
 headers = {"Authorization": f"Bearer {api_key}"}
 
 def query(payload):
