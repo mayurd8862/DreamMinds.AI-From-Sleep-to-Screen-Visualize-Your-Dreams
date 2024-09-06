@@ -1,6 +1,6 @@
 .streamlit
 temp
-
+generated_stories
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
