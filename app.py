@@ -44,16 +44,10 @@ def generate_image_with_retry(content, max_retries=3):
 dream = st.text_area("Enter your Dream description in short:", 
                      placeholder="We were at a theme park, enjoying the rides, when suddenly my friends started disappearing one by one. The park became empty and eerie. I had to solve the mystery and bring them back before I was left all alone.")
 
-from src.new import generate_story
-
 if st.button("🧵 Weave the Dream"):
     start_time = time.time()
     json_otpt = paragraph_gen(dream)
     st.write(json_otpt)
-
-    st.markdown("------------")
-
-    st.write(generate_story(dream))
     
     title = title_gen(json_otpt)
     st.subheader(title)
