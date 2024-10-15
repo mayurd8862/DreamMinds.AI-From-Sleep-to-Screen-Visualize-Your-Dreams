@@ -17,11 +17,15 @@ def paragraph_gen(dream_description):
     pmt = f"""
     Your task is to craft a compelling short story based on the dream described below. This story should be engaging and imaginative, capturing the essence and emotions of the dream. Use clear and simple English, ensuring that the narrative is easily understood by school students, yet rich enough to spark their imagination. 
 
-    The story should be divided into multiple paragraphs, each described in detail.Each paragraph should cotain different pair like - paragraph1 : "paragraph content"
+    Divide the story into exactly 5 paragraphs, each focusing on a different aspect or scene from the dream.
+    Return the story as a JSON object with keys 'paragraph1', 'paragraph2', 'paragraph3', 'paragraph4', and 'paragraph5'.
 
     dream description:
     {dream_description}
     """
+
+        # The story should be divided into multiple paragraphs, each described in detail.Each paragraph should cotain different pair like - paragraph1 : "paragraph content"
+
 
     model = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
     parser = JsonOutputParser()
