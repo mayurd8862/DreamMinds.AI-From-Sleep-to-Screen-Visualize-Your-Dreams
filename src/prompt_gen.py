@@ -1,20 +1,13 @@
 import streamlit as st
-from langchain_google_genai import ChatGoogleGenerativeAI
 import os
+from langchain_groq import ChatGroq
+from dotenv import load_dotenv
 
-if "GOOGLE_API_KEY" not in os.environ:
-    os.environ["GOOGLE_API_KEY"] = st.text_input("Enter your Google API Key", type="password")
-
-# llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
+# Load environment variables
+load_dotenv()
 
 def prompt_gen(paragraph_content):
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
-    # prompt = f"""Generate a clear and concise image description based on the following content. The description should be direct and to the point.
-
-    # Content:
-    # {paragraph_content}
-    # """
-
+    llm = ChatGroq(model="mixtral-8x7b-32768")
     prompt = f"""Generate a straightforward and simple image description based on the content provided below. Use basic words and keep the description clear and easy to understand so it can be effectively used by a text-to-image model. It should strictly generate cartoon like characters. 
 
     Content:

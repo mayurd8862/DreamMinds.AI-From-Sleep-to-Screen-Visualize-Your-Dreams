@@ -1,22 +1,25 @@
 import streamlit as st
-import google.generativeai as genai
 from PIL import Image, UnidentifiedImageError
 import os
 import io
 from src.paragraph_gen import paragraph_gen
 from src.prompt_gen import prompt_gen
 from src.image_gen import img_gen
-from langchain_google_genai import ChatGoogleGenerativeAI
 import time
+from langchain_groq import ChatGroq
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 st.title("👻🔮 DreamMinds.AI")
 st.subheader("", divider='rainbow')
 
-if "GOOGLE_API_KEY" not in os.environ:
-    os.environ["GOOGLE_API_KEY"] = st.text_input("Enter your Google API Key", type="password")
 
 def title_gen(story):
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
+    llm = ChatGroq(
+        model="mixtral-8x7b-32768",
+    )
     prompt = f"""
     Your task is to craft a compelling title for the story provided below. The title should capture the core theme and emotion of the story, which is based on a user's dream description. The title must be creative, evocative, and concise, consisting of just 3-4 impactful words. Output should contain only one title with emoji.
 
@@ -62,7 +65,7 @@ if st.button("🧵 Weave the Dream"):
         col1, col2, col3 = st.columns([0.5, 3.5, 0.5])  # Adjust the width ratio as needed
         with col2:
             if image:
-                st.image(image, use_column_width=True)
+                st.image(image, use_container_width=True)
         
         st.write(content)
         st.write("-------------------------")

@@ -1,5 +1,5 @@
 import os
-from langchain_google_genai import GoogleGenerativeAI
+from langchain_groq import ChatGroq
 from langchain.prompts import PromptTemplate
 # from langchain.output_parsers import JsonOutputParser
 from langchain_core.output_parsers import JsonOutputParser
@@ -8,9 +8,7 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# Set up the Gemini Pro model
-llm = GoogleGenerativeAI(model="gemini-pro", google_api_key=os.getenv("GOOGLE_API_KEY"))
-
+llm = ChatGroq(model="mixtral-8x7b-32768")
 # Set up the JSON parser
 parser = JsonOutputParser()
 

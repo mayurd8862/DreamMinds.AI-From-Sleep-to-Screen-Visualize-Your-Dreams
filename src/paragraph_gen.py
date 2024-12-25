@@ -3,14 +3,10 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_core.pydantic_v1 import BaseModel, Field
 import streamlit as st
-import google.generativeai as genai
-from langchain_google_genai import ChatGoogleGenerativeAI
 import os
+from langchain_groq import ChatGroq
 
-
-if "GOOGLE_API_KEY" not in os.environ:
-    os.environ["GOOGLE_API_KEY"] = st.text_input("Enter your Google API Key", type="password")
-
+llm = ChatGroq(model="mixtral-8x7b-32768")
 
 def paragraph_gen(dream_description):
 
@@ -26,7 +22,7 @@ def paragraph_gen(dream_description):
         # The story should be divided into multiple paragraphs, each described in detail.Each paragraph should cotain different pair like - paragraph1 : "paragraph content"
 
 
-    model = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
+    model = ChatGroq(model="mixtral-8x7b-32768")
     parser = JsonOutputParser()
 
     prompt = PromptTemplate(

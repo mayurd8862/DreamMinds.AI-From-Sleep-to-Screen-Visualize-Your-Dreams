@@ -43,12 +43,6 @@ with col2:
 
 
 
-
-
-
-
-
-
 st.write("The Infinite School Hallway: My friends and I were stuck in a school where the hallways never ended. Every time we turned a corner, we found ourselves back at the same spot. The school bell kept ringing, but no one was around. We had to figure out how to escape before we were trapped there forever.were at a theme park, enjoying the rides, when suddenly my friends started disappearing one by one. The park became empty and eerie.")
 
 
