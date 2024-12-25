@@ -1,8 +1,8 @@
 streamlit
-langchain_google_genai
 PyPDF2
 langchain-community
 pillow
 docx2txt
 huggingface_hub
 safetensors
+langchain_groq
