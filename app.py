@@ -37,7 +37,9 @@ def generate_image_with_retry(content, max_retries=3):
         decoded_img = img_gen(pmt)
         try:
             image = Image.open(io.BytesIO(decoded_img))
+            time.sleep(21)
             return image
+            
         except UnidentifiedImageError:
             retries += 1
             st.warning(f"Attempt {retries} failed. Retrying with a new prompt...")
@@ -58,7 +60,6 @@ if st.button("🧵 Weave the Dream"):
     for key, content in json_otpt.items():
 
         image = generate_image_with_retry(content)
-
 
         # new_image = image.resize((400, 400))
 # Use Streamlit columns to center the image
