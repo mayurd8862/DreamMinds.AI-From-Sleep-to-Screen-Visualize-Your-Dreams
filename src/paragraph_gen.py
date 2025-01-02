@@ -6,7 +6,7 @@ import streamlit as st
 import os
 from langchain_groq import ChatGroq
 
-llm = ChatGroq(model="mixtral-8x7b-32768")
+llm = ChatGroq(model="llama-3.3-70b-versatile")
 
 def paragraph_gen(dream_description):
 

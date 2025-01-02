@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def prompt_gen(paragraph_content):
-    llm = ChatGroq(model="mixtral-8x7b-32768")
+    llm = ChatGroq(model="llama-3.3-70b-versatile")
     prompt = f"""Generate a straightforward and simple image description based on the content provided below. Use basic words and keep the description clear and easy to understand so it can be effectively used by a text-to-image model. It should strictly generate cartoon like characters. 
 
     Content:

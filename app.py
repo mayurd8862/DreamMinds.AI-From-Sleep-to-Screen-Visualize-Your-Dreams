@@ -18,7 +18,7 @@ st.subheader("", divider='rainbow')
 
 def title_gen(story):
     llm = ChatGroq(
-        model="mixtral-8x7b-32768",
+        model="llama-3.3-70b-versatile",
     )
     prompt = f"""
     Your task is to craft a compelling title for the story provided below. The title should capture the core theme and emotion of the story, which is based on a user's dream description. The title must be creative, evocative, and concise, consisting of just 3-4 impactful words. Output should contain only one title with emoji.
@@ -37,7 +37,6 @@ def generate_image_with_retry(content, max_retries=3):
         decoded_img = img_gen(pmt)
         try:
             image = Image.open(io.BytesIO(decoded_img))
-            time.sleep(21)
             return image
             
         except UnidentifiedImageError:
@@ -61,8 +60,6 @@ if st.button("🧵 Weave the Dream"):
 
         image = generate_image_with_retry(content)
 
-        # new_image = image.resize((400, 400))
-# Use Streamlit columns to center the image
         col1, col2, col3 = st.columns([0.5, 3.5, 0.5])  # Adjust the width ratio as needed
         with col2:
             if image:
@@ -70,6 +67,7 @@ if st.button("🧵 Weave the Dream"):
         
         st.write(content)
         st.write("-------------------------")
+        time.sleep(21)
 
     end_time = time.time()  # End timing
     execution_time = end_time - start_time

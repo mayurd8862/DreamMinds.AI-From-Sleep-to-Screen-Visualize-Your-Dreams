@@ -14,12 +14,14 @@ def query(payload):
     if response.status_code == 200:
         return response.content
     else:
-        st.error("Error: " + str(response.status_code) + " " + response.text)
+        # st.error("Error: " + str(response.status_code) + " " + response.text)
         return None
 
 def img_gen(prompt):
     image_bytes = query({"inputs": prompt})
     return image_bytes
+
+
 
 # decoded_img = img_gen("boss baby dancing in the rain")
 
